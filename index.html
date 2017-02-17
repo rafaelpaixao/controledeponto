@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>Controle de Ponto</title>
+	
+	<link href="res/libs/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<link href="res/libs/bootswatch/flatly.min.css" rel="stylesheet">
+	<link href="res/libs/bootstrap-datetimepicker/css/bootstrap-datetimepicker.min.css" rel="stylesheet">
+	<link href="res/libs/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+	<link href="res/css/app.css" rel="stylesheet">
+</head>
+<body>
+	<div class="container">
+		<div class="row titulo">
+			<h1>Controle de Ponto</h1>
+		</div>
+
+		<div class="row">
+			<h3>Configurações</h3>
+			<div class="col-sm-4">
+				<h4>Data:</h4>
+				<div class="form-group">
+				<div class='input-group date' id='datepicker'>
+					<input id="input_data" type='text' class="form-control" />
+					<span class="input-group-addon">
+						<i class="fa fa-calendar" aria-hidden="true"></i>
+					</span>
+				</div>
+				</div>
+			</div>
+			<div class="col-sm-4">
+				<h4>Horário:</h4>
+				<div class='input-group date' id='timepicker'>
+					<input id="input_horario" type='text' class="form-control" />
+					<span class="input-group-addon">
+						<i class="fa fa-clock-o" aria-hidden="true"></i>
+					</span>
+				</div>
+			</div>
+			<div class="col-sm-4">
+				<h4>Tolerância (minutos):</h4>
+				<div class="form-group">
+				<div class='input-group'>
+					<input id="input_tolerancia" type='number' class="form-control" value="10" min="0" max="60"/>
+				</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="row">
+			<h3>Dados do funcionário</h3>
+			<div class="col-sm-6">
+				<h4>Nome:</h4>
+				<input id="input_nome" class="form-control" placeholder="Informe o nome do funcionário" autofocus/>
+			</div>
+			<div class="col-sm-6">
+				<h4>Turno atual: <span id="span_turno_atual">Matutino</span></h4>
+				<button id="input_botao_confirmar" class="btn btn-primary btn-block">Entrada</button>
+			</div>
+		</div>
+
+		<div class="row">
+			<h3 id="titulo_historico">Histórico</h3>
+			<div class="table-responsive">          
+				<table id="tabela_historico" class="table table-striped">
+					<thead>
+						<tr>
+							<th>Nome</th>
+							<th>Data</th>
+							<th>Turno</th>
+							<th>Ação</th>
+							<th>Horário</th>
+						</tr>
+					</thead>
+					<tbody>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+
+	<div id="box_alertas"></div>
+
+	<script src="res/libs/jquery/jquery.min.js"></script>
+	<script src="res/libs/moment/moment-with-locales.js"></script>
+	<script src="res/libs/bootstrap/js/bootstrap.min.js"></script>
+	<script src="res/libs/bootstrap-datetimepicker/js/bootstrap-datetimepicker.min.js"></script>
+	<script src="res/js/app.js"></script>
+	<script src="res/js/view.js"></script>
+	<script src="res/js/events.js"></script>
+	<script>
+		app.inicializar();
+	</script>
+</body>
+</html>
