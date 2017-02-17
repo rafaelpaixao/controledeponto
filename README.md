@@ -2,7 +2,7 @@
 Sistema para controle de ponto em Javascript
 
 ## Como utilizar
-Faça o download, e abra o arquivo index.html (testado apenas no Google Chrome).
+Faça o [download](https://github.com/rafaelpaixao/controledeponto/releases/latest), e abra o arquivo index.html (testado apenas no Google Chrome).
 
 Defina a data, horário, tolerância e informe o nome do funcionário.
 
