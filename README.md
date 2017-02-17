@@ -17,4 +17,4 @@ O objeto que armazena os dados pode ser acessado pelo console através da variá
 app.historico.array
 ```
 
-##[Demo](http://rafaelpaixao.esy.es/controledeponto/).
+##[Demo](http://rafaelpaixao.esy.es/controledeponto/)
