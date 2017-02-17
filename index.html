@@ -14,6 +14,9 @@
 	<link href="res/css/app.css" rel="stylesheet">
 </head>
 <body>
+
+	<button id="botao_ajuda" class="btn btn-primary" data-toggle="modal" data-target="#modal_ajuda"><i class="fa fa-question fa-2x" aria-hidden="true"></i></button>
+
 	<div class="container">
 		<div class="row titulo">
 			<h1>Controle de Ponto</h1>
@@ -21,32 +24,37 @@
 
 		<div class="row">
 			<h3>Configurações</h3>
-			<div class="col-sm-4">
+			<div class="col-sm-5">
 				<h4>Data:</h4>
 				<div class="form-group">
-				<div class='input-group date' id='datepicker'>
-					<input id="input_data" type='text' class="form-control" />
-					<span class="input-group-addon">
-						<i class="fa fa-calendar" aria-hidden="true"></i>
-					</span>
-				</div>
+					<div class='input-group date' id='datepicker'>
+						<input id="input_data" type='text' class="form-control input-lg" />
+						<span class="input-group-addon">
+							<i class="fa fa-calendar fa-2x" aria-hidden="true"></i>
+						</span>
+					</div>
 				</div>
 			</div>
 			<div class="col-sm-4">
 				<h4>Horário:</h4>
-				<div class='input-group date' id='timepicker'>
-					<input id="input_horario" type='text' class="form-control" />
-					<span class="input-group-addon">
-						<i class="fa fa-clock-o" aria-hidden="true"></i>
-					</span>
+				<div class="form-group">
+					<div class='input-group date' id='timepicker'>
+						<input id="input_horario" type='text' class="form-control input-lg" />
+						<span class="input-group-addon">
+							<i class="fa fa-clock-o fa-2x" aria-hidden="true"></i>
+						</span>
+					</div>
 				</div>
 			</div>
-			<div class="col-sm-4">
-				<h4>Tolerância (minutos):</h4>
+			<div class="col-sm-3">
+				<h4>Tolerância:</h4>
 				<div class="form-group">
-				<div class='input-group'>
-					<input id="input_tolerancia" type='number' class="form-control" value="10" min="0" max="60"/>
-				</div>
+					<div class='input-group'>
+						<input id="input_tolerancia" type='number' class="form-control input-lg" value="10" min="0" max="60"/>
+						<span class="input-group-addon lead">
+							min
+						</span>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -55,11 +63,11 @@
 			<h3>Dados do funcionário</h3>
 			<div class="col-sm-6">
 				<h4>Nome:</h4>
-				<input id="input_nome" class="form-control" placeholder="Informe o nome do funcionário" autofocus/>
+				<input id="input_nome" class="form-control input-lg" placeholder="Informe o nome do funcionário" autofocus/>
 			</div>
 			<div class="col-sm-6">
 				<h4>Turno atual: <span id="span_turno_atual">Matutino</span></h4>
-				<button id="input_botao_confirmar" class="btn btn-primary btn-block">Entrada</button>
+				<button id="input_botao_confirmar" class="btn btn-primary btn-block btn-lg">Entrada</button>
 			</div>
 		</div>
 
@@ -82,6 +90,40 @@
 			</div>
 		</div>
 	</div>
+
+	<!-- Modal -->
+	<div class="modal fade" id="modal_ajuda" role="dialog">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h4 class="modal-title">Como utilizar esse site?</h4>
+				</div>
+				<div class="modal-body">
+					<p>
+						Defina a data, horário, tolerância e informe o nome do funcionário.
+					</p>
+					<p>
+						Se o horário informado estiver dentro da tolerância para entrada (7:50~8:10 e 13:50~14:10), será possível realizar uma entrada.
+					</p>
+						Caso já exista uma entrada, é possível realizar uma saída, se a data e o horário de saída forem posteriores a data e o horário de entrada.
+					</p>
+					<p>
+						Caso o funcionário tenha entrado no turno vespertino, não será possível entrar no turno matutino na mesma data.
+					</p>
+					<p>
+						O campo "nome" também funciona como filtro. Caso o nome já exista, serão exibidos apenas os dados referentes aquele funcionário.
+					</p>
+					<p>
+						O objeto que armazena os dados pode ser acessado pelo console através da variável:<strong>app.historico.array</strong>.
+					</p>
+					
+				</div>
+				<div class="modal-footer">
+					<button type="submit" class="btn btn-default pull-right" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Fechar</button>
+				</div>
+			</div>
+		</div>
+	</div> 
 
 	<div id="box_alertas"></div>
 

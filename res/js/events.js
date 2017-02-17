@@ -4,12 +4,10 @@ view.botaoConfirmar.select.click(function(){
 
 //Pega alterações nas inputs
 view.inputNome.select.change(function(){
-	view.inputNome.valida();
 	app.atualizaDados();
 });
 
 view.inputNome.select.keyup(function(){
-	view.inputNome.valida();
 	app.atualizaDados();
 });
 

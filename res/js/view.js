@@ -39,13 +39,6 @@ var view={
 		select: $("#input_nome"),
 		getString: function(){
 			return this.select.val();
-		},
-		setValor: function(valor){
-			this.select.val(valor);
-		},
-		valida: function(){
-			var valor = this.getString().replace(/[^a-zA-Z]+/g, '');
-			this.setValor(valor);
 		}
 
 	},

@@ -37,6 +37,7 @@ var app={
 			format: 'LT',
 			defaultDate: new Date()
 		});
+		//Ativa o popover da ajuda
 		this.atualizaDados();
 	},
 	atualizaDados: function(){
