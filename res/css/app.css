@@ -36,8 +36,6 @@ body {
 }
 
 #botao_ajuda {
-  position: absolute;
-  right: 10px;
-  top: 35px;
+  margin-top: 15px;
   border-radius: 50%;
 }
